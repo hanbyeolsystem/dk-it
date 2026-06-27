@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { caseStudies } from "@/data/cases";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "구축 사례",
@@ -17,7 +18,7 @@ export default function CasesPage() {
           {caseStudies.map((c) => (
             <article key={c.id} className="bg-[var(--bg)] border border-[var(--line)] rounded-3xl overflow-hidden hover:shadow-xl transition">
               <div className="relative aspect-[16/10]">
-                <Image src={c.image} alt={c.title} fill sizes="(min-width:1024px) 33vw, 50vw" className="object-cover" />
+                <Image src={asset(c.image)} alt={c.title} fill sizes="(min-width:1024px) 33vw, 50vw" className="object-cover" />
                 <span className="absolute top-3 left-3 bg-hb-primary/85 text-white text-[10px] font-extrabold tracking-[.15em] px-2.5 py-1 rounded-full">{c.industry}</span>
               </div>
               <div className="p-5">

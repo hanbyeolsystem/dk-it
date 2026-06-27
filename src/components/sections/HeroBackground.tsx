@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { asset } from "@/lib/asset";
 
 /* 히어로 배경 미디어 레이어.
    - SSR/기본: 포스터 이미지(server-rack.png) → LCP 안정, CLS 0
@@ -27,7 +28,7 @@ export function HeroBackground({
   return (
     <>
       <Image
-        src={posterSrc}
+        src={asset(posterSrc)}
         alt="대경IT 엔지니어가 기업 서버·장비를 점검하는 모습"
         fill
         priority

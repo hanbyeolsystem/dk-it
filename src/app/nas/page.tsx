@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "NAS 솔루션",
@@ -67,7 +68,7 @@ export default function NasPage() {
           </div>
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-[var(--line)] shadow-xl">
             <Image
-              src="/hero/server-rack.png"
+              src={asset("/hero/server-rack.png")}
               alt="기업 NAS 서버실"
               fill
               sizes="(min-width:1024px) 50vw, 100vw"

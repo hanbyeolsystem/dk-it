@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { caseStudies } from "@/data/cases";
 import { embedHref } from "@/lib/embed";
+import { asset } from "@/lib/asset";
 
 export function CaseStudies() {
   return (
@@ -55,7 +56,7 @@ export function CaseStudies() {
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
-                    src={c.image}
+                    src={asset(c.image)}
                     alt={c.title}
                     fill
                     sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 90vw"
