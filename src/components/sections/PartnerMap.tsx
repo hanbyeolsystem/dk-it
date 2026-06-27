@@ -29,10 +29,10 @@ export function PartnerMap() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="eyebrow justify-center mb-4">PARTNER NETWORK</span>
           <h2 className="text-2xl lg:text-4xl font-black text-[var(--ink)] mb-4">
-            전국 회원사 네트워크
+            대구·경북 회원사 네트워크
           </h2>
           <p className="text-[var(--mute)] leading-relaxed">
-            15년 이상 전문경력자들의 IT 대표 모임 — 전국 {partners.length}개 회원사가
+            15년 이상 전문경력자들의 IT 대표 모임 — 대구·경북 {partners.length}개 회원사가
             가까운 곳에서 함께 합니다. 회원사를 선택하면 위치와 정보를 확인할 수 있습니다.
           </p>
         </div>
