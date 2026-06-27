@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { PartnerMap } from "@/components/sections/PartnerMap";
 import { QuickService } from "@/components/sections/QuickService";
 import { CoreServices } from "@/components/sections/CoreServices";
 import { InfraConsole } from "@/components/sections/InfraConsole";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <PartnerMap />
       <QuickService />
       <CoreServices />
       <InfraConsole />
