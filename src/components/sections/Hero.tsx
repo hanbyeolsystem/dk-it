@@ -32,13 +32,12 @@ export function Hero() {
           <div className="lg:col-span-7">
             <div className="hb-rise inline-flex items-center gap-2.5 font-mono text-[11px] font-semibold tracking-[.18em] text-white/70 mb-7">
               <span className="hb-blink w-2 h-2 rounded-full bg-hb-azure shadow-[0_0_0_4px_rgba(0,144,216,0.25)]" />
-              SYS.ONLINE — 19Y UPTIME
+              SYS.ONLINE — 15Y+ EXPERTS
             </div>
 
             <h1 className="text-[34px] sm:text-5xl lg:text-[62px] font-black leading-[1.1] tracking-tight mb-7">
-              19년 동안<br />
-              <span className="text-hb-azure">한 번도 멈추지 않은</span><br />
-              IT 파트너
+              15년 이상 전문경력자들의<br />
+              <span className="text-hb-azure">IT 대표의 모임</span>
             </h1>
 
             <p className="text-base lg:text-lg text-white/85 leading-relaxed mb-2 font-medium">

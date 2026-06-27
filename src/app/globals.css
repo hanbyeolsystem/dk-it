@@ -23,14 +23,14 @@
   --color-hb-azure-2:    #FB9A4B;
   --color-hb-azure-soft: #FFE0C7;
 
-  /* 웜 아이보리 배경 / 네이비 잉크 */
-  --color-hb-bg:         #F5F3EF;
+  /* 흰색 배경 / 네이비 잉크 */
+  --color-hb-bg:         #FFFFFF;
   --color-hb-ink:        #16223D;
   --color-hb-mute:       #5C6B82;
-  --color-hb-line:       #E5E0D8;
+  --color-hb-line:       #E8EAEF;
 
   /* shadcn 호환 시맨틱 토큰 (ui/ 컴포넌트용) */
-  --color-border:            #E5E0D8;
+  --color-border:            #E8EAEF;
   --color-muted:             #64748B;
   --color-muted-foreground:  #5C6B82;
   --color-accent:            #FFE7D4;
@@ -44,11 +44,11 @@
 }
 
 :root {
-  --bg:    #F5F3EF;  /* 웜 아이보리 전체 배경 */
-  --panel: #ECE7DF;  /* 섹션 교차용 — 살짝 더 진한 베이지 */
+  --bg:    #FFFFFF;  /* 흰색 전체 배경 */
+  --panel: #F4F6F9;  /* 섹션 교차용 — 아주 옅은 그레이 */
   --ink:   #16223D;  /* 네이비 잉크 */
   --mute:  #5C6B82;
-  --line:  #E2DCD2;
+  --line:  #E8EAEF;
 }
 
 .dark {
