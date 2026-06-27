@@ -1,0 +1,18 @@
+{
+  "id": "/",
+  "lang": "ko",
+  "name": "대경IT 고객센터",
+  "short_name": "대경IT",
+  "description": "IT 유지관리·네트워크·서버/NAS 구축·사무기기. 대구·경북 기업의 IT 파트너 대경IT 고객지원 허브.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F5F3EF",
+  "theme_color": "#16223D",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

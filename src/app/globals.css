@@ -1,0 +1,209 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+@import "tailwindcss";
+
+/* class 기반 다크모드 (next-themes 호환) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* 대경IT 브랜드 팔레트 — 오렌지 + 네이비
+     토큰 이름(hb-*)은 전 컴포넌트가 참조하므로 유지하고 '값'만 교체했다.
+     hb-primary 계열 = 네이비(다크 서피스), hb-blue/azure 계열 = 오렌지(브랜드 포인트). */
+
+  /* 딥 네이비 — 다크 서피스(히어로·푸터·CTA) */
+  --color-hb-primary:    #16223D;
+  --color-hb-primary-2:  #243B66;
+
+  /* 메인 브랜드 오렌지 — 버튼·링크·eyebrow (흰 배경/흰 글씨 모두 AA) */
+  --color-hb-blue:       #DD5A12;
+  --color-hb-blue-light: #FB923C;  /* 온다크 하이라이트 (밝은 오렌지) */
+  --color-hb-blue-soft:  #FFE7D4;  /* 웜 배경 틴트 */
+
+  /* 비비드 오렌지 — 시그니처(글로우·포인트·온다크). 채움/온다크 전용 */
+  --color-hb-azure:      #F26C1F;
+  --color-hb-azure-2:    #FB9A4B;
+  --color-hb-azure-soft: #FFE0C7;
+
+  /* 웜 아이보리 배경 / 네이비 잉크 */
+  --color-hb-bg:         #F5F3EF;
+  --color-hb-ink:        #16223D;
+  --color-hb-mute:       #5C6B82;
+  --color-hb-line:       #E5E0D8;
+
+  /* shadcn 호환 시맨틱 토큰 (ui/ 컴포넌트용) */
+  --color-border:            #E5E0D8;
+  --color-muted:             #64748B;
+  --color-muted-foreground:  #5C6B82;
+  --color-accent:            #FFE7D4;
+  --color-accent-foreground: #16223D;
+
+  /* 사이트 전체 Pretendard 통일 — mono 토큰도 Pretendard 사용 */
+  --font-sans: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+:root {
+  --bg:    #F5F3EF;  /* 웜 아이보리 전체 배경 */
+  --panel: #ECE7DF;  /* 섹션 교차용 — 살짝 더 진한 베이지 */
+  --ink:   #16223D;  /* 네이비 잉크 */
+  --mute:  #5C6B82;
+  --line:  #E2DCD2;
+}
+
+.dark {
+  --bg:    #0E1830;  /* 딥 네이비 */
+  --panel: #182643;
+  --ink:   #EAF0F7;
+  --mute:  #9FB0C6;
+  --line:  #273A5C;
+}
+
+html { scroll-behavior: smooth; }
+
+/* 품질 바닥선: 키보드 포커스 가시화 (틸 신호색) */
+:focus-visible {
+  outline: 2px solid var(--color-hb-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── 시그니처: 관제 콘솔 실(thread) ─────────────────────────────
+   섹션마다 반복되는 모노스페이스 라벨 = "운영실 로그 라인" 느낌.
+   골드 점은 라이브 신호를 인코딩(장식 아님). */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--mute);
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-hb-azure);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-hb-azure) 22%, transparent);
+}
+
+/* 콘솔 패널 표면 — 하프톤 격자 + 미세 보더 */
+.console-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--color-hb-blue-light) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-hb-blue-light) 8%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* 페이지 로드 리빌(절제) */
+@keyframes hb-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+.hb-rise { animation: hb-rise .7s cubic-bezier(.2,.7,.2,1) both; }
+
+/* 라이브 신호 점 */
+@keyframes hb-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .35; }
+}
+.hb-blink { animation: hb-blink 1.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hb-rise, .hb-blink { animation: none; }
+}
+
+/* Swiper 토큰 동기화 */
+.swiper-pagination-bullet {
+  background: var(--color-hb-mute);
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  background: var(--color-hb-azure);
+  opacity: 1;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: var(--color-hb-blue) !important;
+}
+
+/* ── CPU Architecture 컴포넌트 (components/ui/cpu-architecture) ── */
+.cpu-architecture {
+  offset-anchor: 10px 0px;
+  animation: animation-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.75, -0.01, 0, 0.99);
+}
+
+.cpu-line-1 {
+  offset-path: path("M 10 20 h 79.5 q 5 0 5 5 v 30");
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.cpu-line-2 {
+  offset-path: path("M 180 10 h -69.7 q -5 0 -5 5 v 40");
+  animation-delay: 6s;
+  animation-duration: 2s;
+}
+
+.cpu-line-3 {
+  offset-path: path("M 130 20 v 21.8 q 0 5 -5 5 h -25");
+  animation-delay: 4s;
+  animation-duration: 6s;
+}
+
+.cpu-line-4 {
+  offset-path: path("M 170 80 v -21.8 q 0 -5 -5 -5 h -65");
+  animation-delay: 3s;
+  animation-duration: 3s;
+}
+
+.cpu-line-5 {
+  offset-path: path(
+    "M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -35"
+  );
+  animation-delay: 9s;
+  animation-duration: 4s;
+}
+
+.cpu-line-6 {
+  offset-path: path("M 94.8 95 v -46");
+  animation-delay: 3s;
+  animation-duration: 7s;
+}
+
+.cpu-line-7 {
+  offset-path: path(
+    "M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 28"
+  );
+  animation-delay: 4s;
+  animation-duration: 4s;
+}
+
+.cpu-line-8 {
+  offset-path: path("M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 35");
+  animation-delay: 3s;
+  animation-duration: 3s;
+}
+
+@keyframes animation-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
