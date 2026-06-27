@@ -81,7 +81,7 @@ export function ChatWidget() {
       setError(
         e instanceof Error && e.message
           ? e.message
-          : "잠시 연결이 어려워요. 053-588-7119 로 문의해 주세요."
+          : "잠시 연결이 어려워요. 메인 '회원사 네트워크'에서 가까운 회원사로 문의해 주세요."
       );
     } finally {
       setLoading(false);
@@ -129,10 +129,10 @@ export function ChatWidget() {
               <RobotIcon className="w-6 h-6" />
             </span>
             <div className="leading-tight flex-1">
-              <p className="font-extrabold text-[15px]">대경IT 상담원 별이</p>
+              <p className="font-extrabold text-[15px]">대경IT연합회 상담원</p>
               <p className="text-[11px] text-white/70 inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 hb-blink" />
-                보통 즉시 응답 · 평일 09–18시 전화 053-588-7119
+                보통 즉시 응답 · 문의는 회원사로 연결
               </p>
             </div>
             <button

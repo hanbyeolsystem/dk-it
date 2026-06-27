@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { site } from "@/data/site";
 import { embedHref } from "@/lib/embed";
 import { Icon } from "@/components/Icon";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
@@ -11,16 +11,8 @@ export function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10">
           {/* 브랜드 */}
           <div className="col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-white rounded-xl p-1.5">
-                <Image
-                  src="/brand/logo.png"
-                  alt="대경IT"
-                  width={120}
-                  height={140}
-                  className="h-14 w-auto object-contain"
-                />
-              </div>
+            <div className="mb-4">
+              <Logo tone="light" className="h-12 w-auto" />
             </div>
             <p className="text-sm leading-relaxed text-slate-400 mb-4">
               {site.tagline}
@@ -57,38 +49,27 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* 연락처 */}
+          {/* 문의 — 중앙 연락처 없이 각 회원사로 직접 */}
           <div>
-            <h4 className="text-[11px] font-extrabold text-white tracking-[.18em] mb-3">대경IT연합회</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href={site.phone.mainHref} className="inline-flex items-center gap-2 hover:text-white transition">
-                  <Icon name="phone" className="w-4 h-4 shrink-0 text-hb-blue-light" strokeWidth={2} />
-                  {site.phone.main}
-                </a>
-                <div className="text-[11px] text-slate-500 pl-6 mt-0.5">{site.phone.hours}</div>
-              </li>
-              <li>
-                <a href={site.phone.mobileHref} className="inline-flex items-center gap-2 hover:text-white transition">
-                  <Icon name="smartphone" className="w-4 h-4 shrink-0 text-hb-blue-light" strokeWidth={2} />
-                  {site.phone.mobile}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 hover:text-white transition break-all">
-                  <Icon name="mail" className="w-4 h-4 shrink-0 text-hb-blue-light" strokeWidth={2} />
-                  {site.email}
-                </a>
-              </li>
-            </ul>
+            <h4 className="text-[11px] font-extrabold text-white tracking-[.18em] mb-3">문의</h4>
+            <p className="text-sm leading-relaxed text-slate-400 mb-3">
+              대경IT연합회는 회원사별로 운영됩니다.<br />
+              문의는 가까운 회원사로 직접 연락해 주세요.
+            </p>
+            <Link
+              href="/#partners"
+              className="inline-flex items-center gap-1.5 text-sm font-bold text-hb-blue-light hover:text-white transition"
+            >
+              <Icon name="pin" className="w-4 h-4 shrink-0" strokeWidth={2} />
+              회원사 찾기 →
+            </Link>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/10 text-[11px] leading-relaxed text-slate-500">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
             <div>
-              <strong className="text-slate-300">{site.name}</strong> · 대표 {site.address.ceo} · {site.address.street}<br />
-              사업자등록번호 {site.address.bizNo} · 통신판매업신고 {site.address.mailOrder}
+              <strong className="text-slate-300">{site.name}</strong> · 15년 이상 전문경력자들의 IT 대표 모임
             </div>
             <div className="flex items-center gap-3 text-slate-500">
               <Link href="/privacy" className="hover:text-slate-300">개인정보처리방침</Link>
@@ -96,7 +77,7 @@ export function Footer() {
               <Link href="/terms" className="hover:text-slate-300">이용약관</Link>
             </div>
           </div>
-          <div className="text-center text-slate-600 mt-4">© 2026 Daekyung IT. All rights reserved.</div>
+          <div className="text-center text-slate-600 mt-4">© 2026 대경IT연합회 (DAEKYUNG IT UNION). All rights reserved.</div>
         </div>
       </div>
     </footer>

@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { site, nav } from "@/data/site";
+import { nav } from "@/data/site";
 import { ThemeToggle } from "./ThemeToggle";
 import { Icon } from "./Icon";
+import { Logo } from "./Logo";
 
 // 크롬/엣지/안드로이드가 설치 가능 시 발생시키는 이벤트
 interface BeforeInstallPromptEvent extends Event {
@@ -98,18 +98,8 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-6 h-16 lg:h-[68px] flex items-center justify-between gap-4">
         {/* 로고 */}
-        <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="대경IT 홈">
-          <Image
-            src="/brand/logo.png"
-            alt="대경IT"
-            width={240}
-            height={280}
-            priority
-            className="h-11 lg:h-12 w-auto object-contain"
-          />
-          <span className="text-[10px] font-semibold text-[var(--mute)] tracking-[.15em] hidden xl:block">
-            DAEKYUNG IT
-          </span>
+        <Link href="/" className="flex items-center shrink-0" aria-label="대경IT연합회 홈">
+          <Logo className="h-9 lg:h-10 w-auto" />
         </Link>
 
         {/* 중앙 메뉴 */}
@@ -127,18 +117,6 @@ export function Header() {
 
         {/* 우측 */}
         <div className="flex items-center gap-2 shrink-0">
-          <a
-            href={site.phone.mainHref}
-            className="hidden lg:flex flex-col items-end text-right leading-tight pr-2"
-          >
-            <span className="inline-flex items-center gap-1.5 text-[15px] font-extrabold text-[var(--ink)]">
-              <Icon name="phone" className="w-4 h-4 text-hb-blue" strokeWidth={2} />
-              {site.phone.main}
-            </span>
-            <span className="text-[10px] font-semibold text-[var(--mute)]">
-              {site.phone.hours}
-            </span>
-          </a>
           <div className="relative">
             <button
               type="button"
@@ -193,18 +171,6 @@ export function Header() {
                 {n.label}
               </Link>
             ))}
-          </div>
-          <div className="px-4 pb-4">
-            <a
-              href={site.phone.mainHref}
-              className="flex items-center justify-between bg-hb-primary text-white rounded-xl px-4 py-3 font-extrabold"
-            >
-              <span className="inline-flex items-center gap-2">
-                <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
-                {site.phone.main}
-              </span>
-              <span className="text-xs font-semibold text-white/70">{site.phone.hours}</span>
-            </a>
           </div>
         </div>
       )}

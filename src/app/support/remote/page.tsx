@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
-import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "원격 지원",
-  description: "Seetrol MY 원격지원 (대경 전용). 다운로드 후 화면에 보이는 숫자를 대경IT에 알려주시면 즉시 원격 접속합니다.",
+  description: "Seetrol MY 원격지원. 다운로드 후 화면에 보이는 숫자를 담당 회원사에 알려주시면 즉시 원격 접속합니다.",
 };
 
 // 다운로드 경로 — 파일명은 절대 변경 금지 (Seetrol 접속 식별자)
@@ -68,20 +67,19 @@ export default function RemoteSupportPage() {
             </ol>
           </div>
 
-          {/* 전화 CTA */}
+          {/* 회원사 연결 CTA */}
           <div className="bg-gradient-to-br from-hb-primary to-hb-blue text-white rounded-3xl p-7 lg:p-9 text-center shadow-xl">
-            <div className="text-4xl mb-3">📞</div>
-            <h3 className="text-xl lg:text-2xl font-extrabold mb-2">대경IT 직통</h3>
-            <p className="text-sm text-white/80 mb-5">{site.phone.hours}</p>
-            <a
-              href={site.phone.mainHref}
+            <div className="text-4xl mb-3">🤝</div>
+            <h3 className="text-xl lg:text-2xl font-extrabold mb-2">원격 지원 연결</h3>
+            <p className="text-sm text-white/80 mb-5">
+              프로그램 실행 후 화면에 보이는 숫자를<br />담당 회원사에 알려주시면 즉시 접속합니다.
+            </p>
+            <Link
+              href="/#partners"
               className="inline-flex items-center justify-center gap-2 bg-white text-hb-primary hover:bg-hb-blue-soft font-extrabold text-base lg:text-lg px-8 py-4 rounded-xl transition shadow-lg"
             >
-              {site.phone.main}
-            </a>
-            <div className="text-xs text-white/60 mt-3">
-              모바일은 <a href={site.phone.mobileHref} className="underline">{site.phone.mobile}</a>
-            </div>
+              회원사 찾기 →
+            </Link>
           </div>
 
           <div className="mt-8 text-center">

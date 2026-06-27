@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { site } from "@/data/site";
 
 export function CtaBanner() {
   return (
@@ -14,23 +13,23 @@ export function CtaBanner() {
               FREE CONSULTATION — 1영업일 회신
             </div>
             <h2 className="text-2xl lg:text-4xl font-black tracking-tight mb-3 leading-tight">
-              지금 시스템 점검, <span className="text-hb-azure">대경</span>과 시작하세요
+              지금 시스템 점검, <span className="text-hb-azure">가까운 회원사</span>와 시작하세요
             </h2>
             <p className="text-sm lg:text-lg text-white/75 mb-9 max-w-2xl mx-auto leading-relaxed">
-              NAS·백업·임대 무엇이든 — 현재 환경을 진단하고 맞춤 견적을 무료로 드립니다.
+              NAS·백업·임대 무엇이든 — 대구·경북 회원사가 현재 환경을 진단하고 맞춤 견적을 드립니다.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md sm:max-w-none mx-auto">
-              <a
-                href={site.phone.mainHref}
+              <Link
+                href="/#partners"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-hb-azure-soft text-hb-primary font-extrabold text-base lg:text-lg px-8 py-4 rounded-xl transition shadow-lg"
               >
-                전화 상담 {site.phone.main}
-              </a>
+                회원사 찾기 <span aria-hidden>→</span>
+              </Link>
               <Link
-                href="/support/quote"
+                href="/about"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-base lg:text-lg px-8 py-4 rounded-xl transition border border-white/20"
               >
-                상담 신청 <span aria-hidden>→</span>
+                연합회 소개
               </Link>
             </div>
           </div>

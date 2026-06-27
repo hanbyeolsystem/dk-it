@@ -23,7 +23,7 @@ export function PartnerMap() {
   const cur = partners[active];
 
   return (
-    <section className="py-20 lg:py-28 bg-[var(--bg)]">
+    <section id="partners" className="scroll-mt-20 py-20 lg:py-28 bg-[var(--bg)]">
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
         {/* 헤더 */}
         <div className="text-center max-w-2xl mx-auto mb-12">

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
-import { site } from "@/data/site";
 import { sendContact } from "@/lib/contact";
 
 export default function AsPage() {
@@ -45,11 +45,11 @@ export default function AsPage() {
             <div className="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-3xl mb-5">✓</div>
             <h2 className="text-xl font-black text-[var(--ink)] mb-2">AS 접수가 완료되었습니다</h2>
             <p className="text-sm text-[var(--mute)] leading-relaxed mb-6">
-              엔지니어가 확인 후 1영업일 내 연락드립니다.<br />급하신 경우 아래로 바로 연락 주세요.
+              접수 내용은 담당 회원사로 전달되어 1영업일 내 연락드립니다.<br />급하신 경우 가까운 회원사로 직접 연락 주세요.
             </p>
-            <a href={site.phone.mainHref} className="inline-flex items-center gap-2 bg-gradient-to-r from-hb-primary to-hb-blue text-white font-extrabold px-7 py-3.5 rounded-xl shadow-lg">
-              전화 접수 {site.phone.main}
-            </a>
+            <Link href="/#partners" className="inline-flex items-center gap-2 bg-gradient-to-r from-hb-primary to-hb-blue text-white font-extrabold px-7 py-3.5 rounded-xl shadow-lg">
+              회원사 찾기 →
+            </Link>
           </div>
         </section>
       </>
@@ -90,8 +90,7 @@ export default function AsPage() {
             )}
             {status === "error" && (
               <div className="bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-300 rounded-xl px-4 py-3 text-sm font-semibold">
-                전송에 실패했습니다. 잠시 후 다시 시도하시거나{" "}
-                <a href={site.phone.mainHref} className="underline font-bold">{site.phone.main}</a> 으로 연락 주세요.
+                전송에 실패했습니다. 잠시 후 다시 시도해 주세요.
               </div>
             )}
             <button
@@ -102,8 +101,7 @@ export default function AsPage() {
               {status === "sending" ? "전송 중…" : "🛠 AS 접수하기"}
             </button>
             <p className="text-[11px] text-[var(--mute)] text-center">
-              버튼을 누르면 담당자에게 즉시 접수됩니다. 급하면{" "}
-              <a href={site.phone.mainHref} className="text-hb-blue font-bold">{site.phone.main}</a>
+              버튼을 누르면 담당 회원사로 즉시 접수됩니다.
             </p>
           </form>
         </div>

@@ -180,14 +180,14 @@ export default function AboutPage() {
             <div className="relative">
               <div className="inline-flex items-center gap-2.5 font-mono text-[11px] font-semibold tracking-[.18em] text-white/65 mb-6">
                 <span className="hb-blink w-2 h-2 rounded-full bg-hb-azure" />
-                CEO MESSAGE
+                CHAIRMAN MESSAGE
               </div>
               <h2 className="text-xl lg:text-3xl font-black tracking-tight mb-6 leading-snug">
                 &ldquo;기술보다 먼저, <span className="text-hb-azure">신뢰</span>를 드립니다&rdquo;
               </h2>
               <div className="space-y-4 text-white/80 leading-relaxed text-[15px] lg:text-base max-w-3xl">
                 <p>
-                  안녕하세요, 대경IT 대표 <strong className="text-white">{site.address.ceo}</strong>입니다.
+                  안녕하세요, 대경IT연합회 회장 <strong className="text-white">○○○</strong>입니다.
                 </p>
                 <p>
                   저희는 단순한 장비 임대 회사가 아닙니다. 기업의 데이터와 업무환경을 통합 관리하는 IT 파트너로서,
@@ -200,8 +200,8 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="mt-8 pt-6 border-t border-white/10">
-                <div className="text-sm text-white/55">대경IT 대표이사</div>
-                <div className="text-lg font-black mt-0.5">{site.address.ceo}</div>
+                <div className="text-sm text-white/55">대경IT연합회 회장</div>
+                <div className="text-lg font-black mt-0.5">○○○</div>
               </div>
             </div>
           </div>
@@ -321,17 +321,14 @@ export default function AboutPage() {
       {/* 5. 회사 정보 */}
       <section className="py-14 lg:py-20 bg-[var(--bg)]">
         <div className="max-w-3xl mx-auto px-4 lg:px-6">
-          <div className="eyebrow mb-3">COMPANY INFO</div>
-          <h2 className="text-2xl lg:text-3xl font-black text-[var(--ink)] mb-8">회사 정보</h2>
+          <div className="eyebrow mb-3">UNION INFO</div>
+          <h2 className="text-2xl lg:text-3xl font-black text-[var(--ink)] mb-8">연합회 정보</h2>
           <dl className="bg-[var(--panel)] border border-[var(--line)] rounded-2xl overflow-hidden">
             {[
-              ["상호", site.name],
-              ["대표이사", site.address.ceo],
-              ["주소", site.address.street],
-              ["사업자등록번호", site.address.bizNo],
-              ["통신판매업신고", site.address.mailOrder],
-              ["대표전화", site.phone.main],
-              ["이메일", site.email],
+              ["명칭", site.name],
+              ["구성", "15년 이상 전문경력자들의 IT 대표 모임"],
+              ["활동 지역", "대구 · 경북"],
+              ["문의", "각 회원사로 직접 연락 (메인 '회원사 네트워크' 참고)"],
             ].map(([k, v]) => (
               <div
                 key={k}
