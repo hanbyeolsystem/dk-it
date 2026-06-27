@@ -60,12 +60,6 @@ export function Hero() {
               >
                 <Icon name="download" className="w-[18px] h-[18px]" strokeWidth={2} /> 드라이버 검색
               </Link>
-              <Link
-                href="/support/quote"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white font-bold text-[15px] px-6 py-3.5 rounded-xl transition border border-white/20"
-              >
-                상담 문의
-              </Link>
             </div>
           </div>
         </div>

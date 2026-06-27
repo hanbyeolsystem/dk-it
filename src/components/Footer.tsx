@@ -59,7 +59,7 @@ export function Footer() {
 
           {/* 연락처 */}
           <div>
-            <h4 className="text-[11px] font-extrabold text-white tracking-[.18em] mb-3">연락처</h4>
+            <h4 className="text-[11px] font-extrabold text-white tracking-[.18em] mb-3">대경IT연합회</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href={site.phone.mainHref} className="inline-flex items-center gap-2 hover:text-white transition">
