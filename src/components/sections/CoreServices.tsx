@@ -62,12 +62,22 @@ export function CoreServices() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href={s.href}
-                  className={`inline-flex items-center justify-center gap-1.5 font-bold text-sm px-4 py-2.5 rounded-xl transition ${c.cta}`}
-                >
-                  {s.cta} →
-                </Link>
+                {s.href.startsWith("#") ? (
+                  // 같은 페이지 내 회원사 섹션으로 스크롤 (네이티브 앵커)
+                  <a
+                    href={s.href}
+                    className={`inline-flex items-center justify-center gap-1.5 font-bold text-sm px-4 py-2.5 rounded-xl transition ${c.cta}`}
+                  >
+                    {s.cta} →
+                  </a>
+                ) : (
+                  <Link
+                    href={s.href}
+                    className={`inline-flex items-center justify-center gap-1.5 font-bold text-sm px-4 py-2.5 rounded-xl transition ${c.cta}`}
+                  >
+                    {s.cta} →
+                  </Link>
+                )}
               </article>
             );
           })}
