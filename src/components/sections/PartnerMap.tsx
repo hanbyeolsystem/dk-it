@@ -40,7 +40,7 @@ export function PartnerMap() {
         <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           {/* ── 회원사 목록 ── */}
           <div className="lg:col-span-5">
-            <ul className="space-y-2.5 max-h-[560px] overflow-y-auto pr-1">
+            <ul className="space-y-2.5">
               {partners.map((p, i) => {
                 const on = i === active;
                 return (
@@ -91,7 +91,7 @@ export function PartnerMap() {
           </div>
 
           {/* ── 지도 + 선택 회원사 상세 ── */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 lg:sticky lg:top-24">
             <div className="rounded-2xl border border-[var(--line)] overflow-hidden bg-[var(--panel)] shadow-sm">
               <div className="relative w-full aspect-[16/11] bg-[var(--bg)]">
                 <iframe
