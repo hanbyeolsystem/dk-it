@@ -122,6 +122,21 @@ const paths: Record<string, React.ReactNode> = {
       <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
     </>
   ),
+  speaker: (
+    <>
+      <rect x="5" y="2" width="14" height="20" rx="2" />
+      <circle cx="12" cy="14" r="4" />
+      <path d="M12 6h.01" />
+    </>
+  ),
+  network: (
+    <>
+      <rect x="9" y="2" width="6" height="6" rx="1" />
+      <rect x="2" y="16" width="6" height="6" rx="1" />
+      <rect x="16" y="16" width="6" height="6" rx="1" />
+      <path d="M12 8v4M12 12H5v4M12 12h7v4" />
+    </>
+  ),
 };
 
 export type IconName = keyof typeof paths;

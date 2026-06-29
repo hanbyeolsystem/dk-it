@@ -25,10 +25,10 @@ export function CoreServices() {
         <div className="text-center mb-12 lg:mb-16">
           <div className="eyebrow justify-center mb-3">CORE SERVICES</div>
           <h2 className="text-2xl lg:text-4xl font-extrabold text-[var(--ink)] tracking-tight">
-            대경IT 핵심 서비스
+            대경IT연합회 핵심 서비스
           </h2>
           <p className="text-sm lg:text-base text-[var(--mute)] mt-3 max-w-2xl mx-auto">
-            기업의 생산성과 효율성을 높이는 통합 IT 솔루션
+            대구·경북 회원사들의 전문분야를 한곳에 — 분야별 전문 회원사가 직접 해결합니다
           </p>
         </div>
 
