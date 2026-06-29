@@ -43,7 +43,7 @@ export const partners: Partner[] = [
   {
     name: "위더스컴퓨터(월배이마트점)",
     field: "컴퓨터, 프린터임대 ,\n사무기기렌탈",
-    region: "대구 달서구",
+    region: "대구 월배",
     address: "대구시 달서구 조암남로135",
     ceo: "박수민",
     phone: "053-639-1579 / 010-7207-1579",
@@ -86,7 +86,7 @@ export const partners: Partner[] = [
   {
     name: "유원비즈텍",
     field: "영업 관리시스템 개발, 홈페이지 개발",
-    region: "",
+    region: "대구 수성구",
     address: "대구시 수성구 동대구로 55길 4-5",
     ceo: "장승도",
     phone: "053-767-2701",
